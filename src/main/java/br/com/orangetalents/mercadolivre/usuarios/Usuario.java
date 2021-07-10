@@ -2,6 +2,8 @@ package br.com.orangetalents.mercadolivre.usuarios;
 
 import br.com.orangetalents.mercadolivre.usuarios.dto.request.SenhaLimpa;
 import org.hibernate.validator.constraints.Length;
+import org.springframework.util.Assert;
+import org.springframework.util.StringUtils;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
@@ -28,6 +30,9 @@ public class Usuario {
 
     public Usuario(@NotNull @NotBlank @Email String login,
                    @NotBlank @NotNull @Length(min = 6) SenhaLimpa senhaLimpa) {
+        Assert.isTrue(StringUtils.hasLength(login),"email não pode ser em branco");
+        Assert.notNull(senhaLimpa,"o objeto do tipo senha limpa nao pode ser nulo");
+
         this.login = login;
         this.senha = senhaLimpa.hashSenha();
         this.dataHoraCriacao = LocalDateTime.now();
