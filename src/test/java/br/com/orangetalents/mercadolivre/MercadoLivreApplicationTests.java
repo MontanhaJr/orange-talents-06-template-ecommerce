@@ -1,4 +1,4 @@
-package br.com.orangetalents.mercadolivre.MercadoLivre;
+package br.com.orangetalents.mercadolivre;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
