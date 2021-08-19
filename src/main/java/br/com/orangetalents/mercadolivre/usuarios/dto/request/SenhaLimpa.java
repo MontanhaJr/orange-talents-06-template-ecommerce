@@ -15,6 +15,9 @@ public class SenhaLimpa {
 
     private String senha;
 
+    public SenhaLimpa() {
+    }
+
     public SenhaLimpa(@NotBlank @NotNull @Length(min = 6) String senha) {
         Assert.hasLength(senha, "A senha nao pode ser em branco");
         Assert.isTrue(senha.length()>=6,"A senha tem que ter no mínimo 6 caracteres");

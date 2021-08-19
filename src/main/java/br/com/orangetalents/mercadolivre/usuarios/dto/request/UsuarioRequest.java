@@ -4,6 +4,7 @@ package br.com.orangetalents.mercadolivre.usuarios.dto.request;
 import br.com.orangetalents.mercadolivre.usuarios.Usuario;
 import br.com.orangetalents.mercadolivre.validation.annotation.unique.IsUniqueValidator;
 import org.hibernate.validator.constraints.Length;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
